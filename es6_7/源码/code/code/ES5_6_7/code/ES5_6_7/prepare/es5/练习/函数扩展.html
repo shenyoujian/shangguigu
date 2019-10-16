@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>es5函数扩展</title>
+</head>
+<body>
+    <script>
+        function func (data) {
+            console.log(data)
+            console.log(this)
+        }
+
+        func(2)         //2, window
+
+        var obj = {}
+
+        func.call(obj)  //undefined, {}
+        func.apply(obj) //undefined, {}
+
+        //如果传参会怎么样
+        func.call(obj, 2)       //2, {}
+       // func.apply(obj, 2)      //报错
+
+        var funReturn = func.bind(obj, 2)
+        console.log(typeof funReturn)   //function
+        console.log(funReturn())
+
+        /** 考试题
+        call、apply、bind有什么区别
+        都是给函数内的this绑定对象
+        不同：call和apply调用后立即调用原方法，bind调用后返回原方法
+        /**/
+        
+    </script>
+    
+</body>
+</html>

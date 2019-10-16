@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>02_JSON对象</title>
+</head>
+<body>
+<!--
+1. JSON.stringify(obj/arr)
+  * js对象(数组)转换为json对象(数组)
+2. JSON.parse(json)
+  * json对象(数组)转换为js对象(数组)
+
+-->
+<script type="text/javascript">
+    var obj = {
+        name : 'kobe',
+        age : 39
+    };
+    obj = JSON.stringify(obj);
+    console.log( typeof obj);
+    obj = JSON.parse(obj);
+    console.log(obj);
+
+    //json字符串
+    var a = "aaa" //不是json字符串，是普通字符串
+    var b = 'bbb' //不是json字符串，是普通字符串
+
+    //json字符串只包括两种json对象和json数组，然后再对象或者数组的外面加上单引号或者双引号才是json字符串
+    //那它为什么要提出json对象和json数组的概念呢？ json是前后端的数据传输格式，如果数据都弄成一个字符串，前端是无法解析其中数据的
+    //一般是对象，然后obj.属性，但是js对象不是数据传输格式，所以就出现了json对象字符串，而前端就可以使用JSON把json对象字符串转换
+    //为js对象，因为它们可以一一对应
+
+</script>
+</body>
+</html>

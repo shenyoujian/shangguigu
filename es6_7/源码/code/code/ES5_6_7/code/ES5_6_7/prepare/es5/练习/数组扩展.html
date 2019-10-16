@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>es5数组扩展</title>
+</head>
+<body>
+    <script>
+        // indexOf,lastOf,eachfor,map,filter
+        //注意参数的位置
+
+        var arr = [2,5,6,9,8,5]
+        console.log(arr.indexOf(5))     //1 indexof返回数据第一次出现的下标
+        console.log(arr.lastIndexOf(5))     //5  lastindexof返回数据最后一次出现的下标
+
+
+        arr.forEach((index, item) => {      //循环遍历元素
+            console.log(index, item)
+        })
+
+        var arrMap = arr.map((item, index) => {     //返回一个加工后的新数组
+            return item + 10
+        })
+
+        console.log(arr, arrMap)
+
+
+        var arrFilter = arr.filter(function (item, index) {     //返回一个过滤后的新数组
+            return item>5
+        })
+
+        console.log(arr, arrFilter)
+    </script>
+</body>
+</html>
